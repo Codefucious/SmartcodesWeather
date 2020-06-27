@@ -6,36 +6,24 @@ import {ApiServerService} from '../api-server.service';
   templateUrl: './weather-cards-scroller.component.html',
   styleUrls: ['./weather-cards-scroller.component.css']
 })
+
+// Independent component to get and display weather info for cities on mobile
 export class WeatherCardsScrollerComponent implements OnInit {
 
-  breakpoint: number;
+  // Holds requested data for cities
   citiesData: any;
   constructor(private weatherAPiService: ApiServerService) { }
 
 
-
+// On initialization get cities weather data
   ngOnInit() {
 
+    // Uses api service to get data and subscribe any changes to holderVariable
     this.weatherAPiService.getCurrentWeather().subscribe(
       ( data: any) => {
         console.log(data);
         this.citiesData = data.list ;
       });
 
-  }
-
-  onResize(event) {
-
-    // this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 6;
-    // this.breakpoint = (event.target.innerWidth <= 425) ? 2 : 6;
-    // this.breakpoint = (event.target.innerWidth <= 600) ? 3 : 6;
-    // this.breakpoint = (event.target.innerWidth <= 1000) ? 4 : 6;
-    if (event.target.innerWidth <= 768) {
-      this.breakpoint = 1;
-    } else if (event.target.innerWidth <= 1232) {
-      this.breakpoint = 2;
-    } else {
-      this.breakpoint = 5;
-    }
   }
 }

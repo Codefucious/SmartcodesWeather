@@ -8,28 +8,28 @@ import {ApiServerService} from '../api-server.service';
 })
 export class WeatherCardsDesktopComponent implements OnInit {
 
+  // Holds the number of columns to be displayed depending on screen size
   breakpoint = 4;
+
+  // Holds requested data for cities
   citiesData: any;
   constructor(private weatherAPiService: ApiServerService) { }
 
 
-
+// On initialization get cities weather data
   ngOnInit() {
 
     this.weatherAPiService.getCurrentWeather().subscribe(
-      data => {
+      (data: any ) => {
         console.log(data);
         this.citiesData = data.list ;
       });
 
   }
 
+  // called when screen is resized to make it responsively alter the number of columns
   onResize(event) {
 
-    // this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 6;
-    // this.breakpoint = (event.target.innerWidth <= 425) ? 2 : 6;
-    // this.breakpoint = (event.target.innerWidth <= 600) ? 3 : 6;
-    // this.breakpoint = (event.target.innerWidth <= 1000) ? 4 : 6;
     if (event.target.innerWidth <= 768) {
       this.breakpoint = 1;
     } else if (event.target.innerWidth <= 1632) {

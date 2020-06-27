@@ -1,6 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
-
+<!--Header bar -->
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span>Smartcodes Weather Today</span>
@@ -8,12 +6,22 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
+
+<!--Scroller component for mobile screens-->
 <div style="padding-top: 20px; padding-bottom: 20px; ">
+  <!--only shows on mobile screens-->
   <app-weather-cards-scroller  fxShow fxHide.gt-sm ></app-weather-cards-scroller>
 </div>
+
+
+
+<!--Scroller component for desktop / laptop screens-->
 <div style="padding-top: 20px; padding-bottom: 20px; ">
+  <!--only shows for desktop / laptop screens-->
   <app-weather-cards-desktop fxShow fxHide.lt-md ></app-weather-cards-desktop>
 </div>
+
+
 
 
 <div style="text-align:center">
