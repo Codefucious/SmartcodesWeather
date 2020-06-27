@@ -17,7 +17,7 @@ export class WeatherCardsScrollerComponent implements OnInit {
   ngOnInit() {
 
     this.weatherAPiService.getCurrentWeather().subscribe(
-      data => {
+      ( data: any) => {
         console.log(data);
         this.citiesData = data.list ;
       });
