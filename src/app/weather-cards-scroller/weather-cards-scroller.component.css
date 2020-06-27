@@ -1,0 +1,23 @@
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.card {
+  display: inline-block;
+}
+.example-card {
+  min-width: 95%;
+  height: 100%;
+  display: inline-block;
+  padding: 5px;
+}
+
+.inner-card {
+  height: 100%;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
