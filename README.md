@@ -6,4 +6,4 @@
  <img src="https://github.com/Codefucious/SmartcodesWeather/blob/master/src/assets/desktop.jpg" width="900">
  
   # Mobile Screenshot
- <img src="https://github.com/Codefucious/SmartcodesWeather/blob/master/src/assets/mobile.jpg" width="900">
+ <img src="https://github.com/Codefucious/SmartcodesWeather/blob/master/src/assets/mobile.jpg" width="500">
